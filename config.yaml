@@ -1,26 +1,23 @@
-log:
-  loglevel: info
-dns:
-  servers:
-  - https+local://8.8.8.8/dns-query
-inbounds:
-- port: 8080
-  protocol: trojan
-  settings:
-    clients:
-    - password: "123"
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: qwe
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
-outbounds:
-- protocol: freedom
-  tag: direct
-  settings:
-    domainStrategy: UseIPv4
+{
+	"inbounds": [{
+		"port": 8080,
+		"protocol": "shadowsocks",
+		"settings": {
+			"method": "aes-128-gcm",
+			"ota": false,
+			"password": "pass123",
+			"level": 0,
+			"network": "tcp,udp"
+		},
+		"streamSettings": {
+			"network": "ws",
+			"wsSettings": {
+				"path": "/qwe"
+			}
+		}
+	}],
+	"outbounds": [{
+		"protocol": "freedom",
+		"settings": {}
+	}]
+}
