@@ -5,7 +5,7 @@
 		"settings": {
 			"method": "aes-128-gcm",
 			"ota": false,
-			"password": "pass123",
+			"password": "loudi123",
 			"level": 0,
 			"network": "tcp,udp"
 		},
